@@ -14,6 +14,23 @@ export default function Main() {
             </ul>
           </div>
          </div>
+         <div>
+         <h4 className="text-lg font-bold">Contents</h4>
+         <div>
+          <input type="checkbox" name="VRChat" id="VRChatQ" />
+          <label htmlFor="VRChatQ" className="pl-1">VRChat(Quest)</label>
+          <br />
+          <input type="checkbox" name="VRChat" id="VRChat" />
+          <label htmlFor="VRChat" className="pl-1">VRChat(PCVR)</label>
+          <br />
+          <input type="checkbox" name="Others" id="Others" />
+          <label htmlFor="Others" className="pl-1">Others</label>
+
+         </div>
+         </div>
+         <div></div>
+         <div></div>
+         <div></div>
         </div>
         <div className="w-3/4 grid grid-cols-3">
           <div>
