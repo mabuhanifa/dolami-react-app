@@ -42,10 +42,17 @@ export default function Main() {
                     <p className="px-1 text-gray-500"> & {data.likes}likes</p>
                   </div>
                   <div className="px-2 flex items-center">
-                    <img src={data.img} alt="avatar" className="h-5 rounded-full"/>
+                    <img
+                      src={data.img}
+                      alt="avatar"
+                      className="h-5 rounded-full"
+                    />
                     <p className="px-2 text-gray-500">Avatar Joe's</p>
                   </div>
-              
+                  <div className="px-2 flex">
+                    <span className="text-xs pt-3 pr-1">$</span>
+                    <p className="text-2xl font-bold">{data.price}</p>
+                  </div>
                 </div>
               ))}
           </div>
