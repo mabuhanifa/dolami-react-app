@@ -5,43 +5,85 @@ export default function Main() {
     <section className="px-10">
       <div className="flex">
         <div className="w-1/4">
-         <div>
-          <h4 className="text-lg font-bold">Category</h4>
-          <div className="px-2">
-            <ul >
-              <li>Ful Avatar</li>
-              <li>Others</li>
-            </ul>
+          <div>
+            <h4 className="text-lg font-bold">Category</h4>
+            <div className="px-2">
+              <ul>
+                <li>Ful Avatar</li>
+                <li>Others</li>
+              </ul>
+            </div>
           </div>
-         </div>
-         <div>
-         <h4 className="text-lg font-bold">Contents</h4>
-         <div>
-          <input type="checkbox" name="VRChat" id="VRChatQ" />
-          <label htmlFor="VRChatQ" className="pl-1">VRChat(Quest)</label>
-          <br />
-          <input type="checkbox" name="VRChat" id="VRChat" />
-          <label htmlFor="VRChat" className="pl-1">VRChat(PCVR)</label>
-          <br />
-          <input type="checkbox" name="Others" id="Others" />
-          <label htmlFor="Others" className="pl-1">Others</label>
-
-         </div>
-         </div>
-         <div></div>
-         <div></div>
-         <div></div>
+          <div>
+            <h4 className="text-lg font-bold">Contents</h4>
+            <div>
+              <input type="checkbox" name="VRChat" id="VRChatQ" />
+              <label htmlFor="VRChatQ" className="pl-1">
+                VRChat(Quest)
+              </label>
+              <br />
+              <input type="checkbox" name="VRChat" id="VRChat" />
+              <label htmlFor="VRChat" className="pl-1">
+                VRChat(PCVR)
+              </label>
+              <br />
+              <input type="checkbox" name="Others" id="Others" />
+              <label htmlFor="Others" className="pl-1">
+                Others
+              </label>
+            </div>
+          </div>
+          <div>
+            <h4 className="text-lg font-bold">Price</h4>
+            <div>
+              <input type="checkbox" name="u10" id="u10" />
+              <label htmlFor="u10" className="pl-1">
+                Under $10
+              </label>
+              <br />
+              <input type="checkbox" name="10to20" id="10to20" />
+              <label htmlFor="10to20" className="pl-1">
+                $10 to $20
+              </label>
+              <br />
+              <input type="checkbox" name="20to30" id="20to30" />
+              <label htmlFor="20to30" className="pl-1">
+                $20 to $30
+              </label>
+              <br />
+              <input type="checkbox" name="30to40" id="30to40" />
+              <label htmlFor="30to40" className="pl-1">
+                $30 to $40
+              </label>
+              <br />
+              <input type="checkbox" name="40to50" id="40to50" />
+              <label htmlFor="40to50" className="pl-1">
+                $40 to $50
+              </label>
+              <br />
+              <input type="checkbox" name="50to60" id="50to60" />
+              <label htmlFor="50to60" className="pl-1">
+                $50 to $60
+              </label>
+              <br />
+              <input type="checkbox" name="60to70" id="60to70" />
+              <label htmlFor="60to70" className="pl-1">
+                $60 to $70
+              </label>
+              <br />
+              <input type="checkbox" name="a70" id="a70" />
+              <label htmlFor="a70" className="pl-1">
+                above $70
+              </label>
+            </div>
+          </div>
+          <div></div>
+          <div></div>
         </div>
         <div className="w-3/4 grid grid-cols-3">
-          <div>
-            
-          </div>
-          <div>
-            
-          </div>
-          <div>
-            
-          </div>
+          <div></div>
+          <div></div>
+          <div></div>
         </div>
       </div>
     </section>
