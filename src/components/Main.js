@@ -1,4 +1,5 @@
 import React from "react";
+import { FiShare } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { data } from "../data/data";
 import SideBar from "./SideBar";
@@ -52,6 +53,18 @@ export default function Main() {
                   <div className="px-2 flex">
                     <span className="text-xs pt-3 pr-1">$</span>
                     <p className="text-2xl font-bold">{data.price}</p>
+                  </div>
+                  <div className="px-2 flex items-center">
+                    <div className="h-5 w-5 rounded-full bg-cyan-500"></div>
+                    <div className="mx-2">{data.pc_only && "PC Only"}</div>
+                  </div>
+                  <div className="pl-2 pr-5 relative">
+                    {data.desc}
+                    <div className="absolute right-3 bottom-1 text-gray-500">
+                      <button>
+                        <FiShare className="text-lg" />
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
