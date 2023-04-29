@@ -29,8 +29,17 @@ export default function Main() {
                   <div className="p-1 relative">
                     <img src={data.img} alt="" className="rounded" />
                     <button className="px-2 bg-[#4c45f6] text-white rounded-lg absolute top-3 right-3">
-                      <IoCartOutline className="inline text-xl mb-1 mx-1 font-bold"/>Add
+                      <IoCartOutline className="inline text-xl mb-1 mx-1 font-bold" />
+                      Add
                     </button>
+                  </div>
+                  <div className="p-2 text-[16px] font-[500]">
+                    <h1>{data.name}</h1>
+                  </div>
+                  <div className="flex items-center">
+                    <p className="px-2 text-orange-400 text-lg">{data.star}</p>
+                    <p className="px-1">{data.rating}</p>
+                    <p className="px-1"> & {data.likes}likes</p>
                   </div>
                 </div>
               ))}
