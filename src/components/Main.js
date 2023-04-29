@@ -112,11 +112,24 @@ export default function Main() {
               <br />
               <input type="checkbox" name="a70000" id="a70000" />
               <label htmlFor="a70000" className="pl-1">
-               &#9651; 700000 &  Above 
+                &#9651; 700000 & Above
               </label>
             </div>
           </div>
-          <div></div>
+          <div>
+            <h4 className="text-lg font-bold">Auto Upload & Support</h4>
+            <div>
+              <input type="checkbox" name="supported" id="supported" />
+              <label htmlFor="supported" className="pl-1">
+                Supported
+              </label>
+              <br />
+              <input type="checkbox" name="Unsupported" id="Unsupported" />
+              <label htmlFor="Unsupported" className="pl-1">
+                Unsupported
+              </label>
+            </div>
+          </div>
         </div>
         <div className="w-3/4 grid grid-cols-3">
           <div></div>
