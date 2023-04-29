@@ -33,14 +33,19 @@ export default function Main() {
                       Add
                     </button>
                   </div>
-                  <div className="p-2 text-[16px] font-[500]">
+                  <div className="px-2 text-[16px] font-[500]">
                     <h1>{data.name}</h1>
                   </div>
                   <div className="flex items-center">
                     <p className="px-2 text-orange-400 text-lg">{data.star}</p>
-                    <p className="px-1">{data.rating}</p>
-                    <p className="px-1"> & {data.likes}likes</p>
+                    <p className="px-1 text-gray-500">{data.rating}</p>
+                    <p className="px-1 text-gray-500"> & {data.likes}likes</p>
                   </div>
+                  <div className="px-2 flex items-center">
+                    <img src={data.img} alt="avatar" className="h-5 rounded-full"/>
+                    <p className="px-2 text-gray-500">Avatar Joe's</p>
+                  </div>
+              
                 </div>
               ))}
           </div>
