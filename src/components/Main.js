@@ -77,7 +77,45 @@ export default function Main() {
               </label>
             </div>
           </div>
-          <div></div>
+          <div>
+            <h4 className="text-lg font-bold">Polygon Amount</h4>
+            <div>
+              <input type="checkbox" name="u7500" id="u7500" />
+              <label htmlFor="u7500" className="pl-1">
+                Under &#9651; 7500
+              </label>
+              <br />
+              <input type="checkbox" name="7500to10000" id="7500to10000" />
+              <label htmlFor="7500to10000" className="pl-1">
+                &#9651; 7500 to &#9651; 10000
+              </label>
+              <br />
+              <input type="checkbox" name="10000to15000" id="10000to15000" />
+              <label htmlFor="10000to15000" className="pl-1">
+                &#9651; 10000 to &#9651; 15000
+              </label>
+              <br />
+              <input type="checkbox" name="15000to20000" id="15000to20000" />
+              <label htmlFor="15000to20000" className="pl-1">
+                &#9651; 15000 to &#9651; 20000
+              </label>
+              <br />
+              <input type="checkbox" name="20000to32000" id="20000to32000" />
+              <label htmlFor="20000to32000" className="pl-1">
+                &#9651; 20000 to &#9651; 320000
+              </label>
+              <br />
+              <input type="checkbox" name="32000to70000" id="32000to70000" />
+              <label htmlFor="32000to70000" className="pl-1">
+                &#9651; 320000 to &#9651; 700000
+              </label>
+              <br />
+              <input type="checkbox" name="a70000" id="a70000" />
+              <label htmlFor="a70000" className="pl-1">
+               &#9651; 700000 &  Above 
+              </label>
+            </div>
+          </div>
           <div></div>
         </div>
         <div className="w-3/4 grid grid-cols-3">
