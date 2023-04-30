@@ -26,7 +26,7 @@ export default function Main() {
           <div className=" grid grid-cols-4">
             {data &&
               data.map((data) => (
-                <div key={data.id}>
+                <div key={data.id} className="pb-2">
                   <div className="p-1 relative">
                     <img src={data.img} alt="" className="rounded" />
                     <button className="px-2 bg-[#4c45f6] text-white rounded-lg absolute top-3 right-3">
@@ -71,6 +71,7 @@ export default function Main() {
           </div>
         </div>
       </div>
+      <div></div>
     </section>
   );
 }
