@@ -16,8 +16,10 @@ export default function Nav() {
 
       <nav className="flex justify-between text-white text-lg items-center">
         <div className="relative mr-5">
-          <input type="text" className="py-1 rounded w-96 text-gray-500 px-2" />
-          <GoSearch className="text-gray-400 text-lg absolute top-1/2 right-3 -translate-y-1/2" />
+          <input type="text" className="py-1 rounded w-96 text-gray-500 px-2 pr-10" />
+          <button>
+            <GoSearch className="text-gray-400 text-lg absolute top-1/2 right-3 -translate-y-1/2" />
+          </button>
         </div>
         <span className="bg-gray-800 mx-5 p-3 rounded-lg relative">
           <VscBell className="text-xl" />

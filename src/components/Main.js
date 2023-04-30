@@ -6,7 +6,7 @@ import Pagination from "./Pagination";
 import SideBar from "./SideBar";
 export default function Main() {
   const [page, setPage] = useState(1);
-  const perPage = 5;
+  const perPage = 10;
   const lastIndex = page * perPage;
   const firstIndex = lastIndex - perPage;
   const avatars = data.slice(firstIndex, lastIndex);
