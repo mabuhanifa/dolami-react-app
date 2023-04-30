@@ -9,7 +9,7 @@ export default function Pagination({
 }) {
   return (
     <>
-      <div className="mb-10">
+      <div className="my-10">
         <button
           onClick={() => getPrevPage()}
           className="text-xl font-bold text-gray-700"

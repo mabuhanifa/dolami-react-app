@@ -12,6 +12,7 @@ export const data = [
     price: 9.99,
     pc_only: true,
     desc: "Auto upload service ready, you can use this avatar within 24 hours.",
+    gender: "male",
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ export const data = [
     price: 19.99,
     pc_only: true,
     desc: "Auto upload service ready, you can use this avatar within 24 hours.",
+    gender: "male",
   },
   {
     id: 3,
@@ -36,6 +38,7 @@ export const data = [
     price: 19.99,
     pc_only: true,
     desc: "Auto upload service ready, you can use this avatar within 24 hours.",
+    gender: "male",
   },
   {
     id: 4,
@@ -48,6 +51,7 @@ export const data = [
     price: 19.99,
     pc_only: true,
     desc: "Auto upload service ready, you can use this avatar within 24 hours.",
+    gender: "male",
   },
   {
     id: 5,
@@ -60,6 +64,7 @@ export const data = [
     price: 19.99,
     pc_only: true,
     desc: "Auto upload service ready, you can use this avatar within 24 hours.",
+    gender: "male",
   },
   {
     id: 6,
@@ -72,6 +77,7 @@ export const data = [
     price: 19.99,
     pc_only: true,
     desc: "Auto upload service ready, you can use this avatar within 24 hours.",
+    gender: "male",
   },
   {
     id: 7,
@@ -84,6 +90,7 @@ export const data = [
     price: 19.99,
     pc_only: true,
     desc: "Auto upload service ready, you can use this avatar within 24 hours.",
+    gender: "male",
   },
   {
     id: 8,
@@ -96,6 +103,7 @@ export const data = [
     price: 19.99,
     pc_only: true,
     desc: "Auto upload service ready, you can use this avatar within 24 hours.",
+    gender: "male",
   },
   {
     id: 9,
@@ -108,6 +116,7 @@ export const data = [
     price: 19.99,
     pc_only: true,
     desc: "Auto upload service ready, you can use this avatar within 24 hours.",
+    gender: "male",
   },
   {
     id: 10,
@@ -120,5 +129,6 @@ export const data = [
     price: 19.99,
     pc_only: true,
     desc: "Auto upload service ready, you can use this avatar within 24 hours.",
+    gender: "male",
   },
 ];
