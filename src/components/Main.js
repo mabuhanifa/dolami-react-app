@@ -1,9 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiShare } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { data } from "../data/data";
+import Pagination from "./Pagination";
 import SideBar from "./SideBar";
 export default function Main() {
+  const [page, setPage] = useState(1);
+  const perPage = 5;
+  const lastIndex = page * perPage;
+  const firstIndex = lastIndex - perPage;
+  const avatars = data.slice(firstIndex, lastIndex);
+  const totalPages = Math.ceil(data.length / perPage);
+
+  const selectPageHandler = (selectedPage) => {
+    if (selectedPage >= 1 && selectedPage <= totalPages) {
+      setPage(selectedPage);
+    }
+  };
+  const getNextPage = () => {
+    if (page < totalPages) {
+      setPage(page + 1);
+    }
+  };
+
+  const getPrevPage = () => {
+    if (page > 1) {
+      setPage(page - 1);
+    }
+  };
   return (
     <section className="px-10">
       <div className="flex">
@@ -24,54 +48,66 @@ export default function Main() {
             </div>
           </div>
           <div className=" grid grid-cols-4">
-            {data &&
-              data.map((data) => (
-                <div key={data.id} className="pb-2">
-                  <div className="p-1 relative">
-                    <img src={data.img} alt="" className="rounded" />
-                    <button className="px-2 bg-[#4c45f6] text-white rounded-lg absolute top-3 right-3">
-                      <IoCartOutline className="inline text-xl mb-1 mx-1 font-bold" />
-                      Add
-                    </button>
-                  </div>
-                  <div className="px-2 text-[16px] font-[500]">
-                    <h1>{data.name}</h1>
-                  </div>
-                  <div className="flex items-center">
-                    <p className="px-2 text-orange-400 text-lg">{data.star}</p>
-                    <p className="px-1 text-gray-500">{data.rating}</p>
-                    <p className="px-1 text-gray-500"> & {data.likes}likes</p>
-                  </div>
-                  <div className="px-2 flex items-center">
-                    <img
-                      src={data.img}
-                      alt="avatar"
-                      className="h-5 rounded-full"
-                    />
-                    <p className="px-2 text-gray-500">Avatar Joe's</p>
-                  </div>
-                  <div className="px-2 flex">
-                    <span className="text-xs pt-3 pr-1">$</span>
-                    <p className="text-2xl font-bold">{data.price}</p>
-                  </div>
-                  <div className="px-2 flex items-center">
-                    <div className="h-5 w-5 rounded-full bg-cyan-500"></div>
-                    <div className="mx-2">{data.pc_only && "PC Only"}</div>
-                  </div>
-                  <div className="pl-2 pr-5 relative">
-                    {data.desc}
-                    <div className="absolute right-3 bottom-1 text-gray-500">
-                      <button>
-                        <FiShare className="text-lg" />
+            {avatars &&
+              avatars
+                .slice(0 * perPage - perPage, page * perPage)
+                .map((data) => (
+                  <div key={data.id} className="pb-2">
+                    <div className="p-1 relative">
+                      <img src={data.img} alt="" className="rounded" />
+                      <button className="px-2 bg-[#4c45f6] text-white rounded-lg absolute top-3 right-3">
+                        <IoCartOutline className="inline text-xl mb-1 mx-1 font-bold" />
+                        Add
                       </button>
                     </div>
+                    <div className="px-2 text-[16px] font-[500]">
+                      <h1>{data.name}</h1>
+                    </div>
+                    <div className="flex items-center">
+                      <p className="px-2 text-orange-400 text-lg">
+                        {data.star}
+                      </p>
+                      <p className="px-1 text-gray-500">{data.rating}</p>
+                      <p className="px-1 text-gray-500"> & {data.likes}likes</p>
+                    </div>
+                    <div className="px-2 flex items-center">
+                      <img
+                        src={data.img}
+                        alt="avatar"
+                        className="h-5 rounded-full"
+                      />
+                      <p className="px-2 text-gray-500">Avatar Joe's</p>
+                    </div>
+                    <div className="px-2 flex">
+                      <span className="text-xs pt-3 pr-1">$</span>
+                      <p className="text-2xl font-bold">{data.price}</p>
+                    </div>
+                    <div className="px-2 flex items-center">
+                      <div className="h-5 w-5 rounded-full bg-cyan-500"></div>
+                      <div className="mx-2">{data.pc_only && "PC Only"}</div>
+                    </div>
+                    <div className="pl-2 pr-5 relative">
+                      {data.desc}
+                      <div className="absolute right-3 bottom-1 text-gray-500">
+                        <button>
+                          <FiShare className="text-lg" />
+                        </button>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
           </div>
         </div>
       </div>
-      <div></div>
+      <div className="flex justify-center">
+        <Pagination
+          selectPageHandler={selectPageHandler}
+          totalPages={totalPages}
+          page={page}
+          getPrevPage={getPrevPage}
+          getNextPage={getNextPage}
+        />
+      </div>
     </section>
   );
 }

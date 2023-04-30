@@ -66,7 +66,7 @@ export const data = [
     name: "Avatar name “Avatown” -nice original avatar of Avatown",
     img: avatar,
     star: "★★★★★",
-    rating: 4.7,
+    rating: 4.8,
     likes: "1000",
     love: false,
     price: 19.99,
