@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FiShare } from "react-icons/fi";
 import { IoCartOutline } from "react-icons/io5";
 import { data } from "../data/data";
+import Love from "./Love";
 import Pagination from "./Pagination";
 import SideBar from "./SideBar";
 export default function Main() {
@@ -11,6 +12,7 @@ export default function Main() {
   const firstIndex = lastIndex - perPage;
   const avatars = data.slice(firstIndex, lastIndex);
   const totalPages = Math.ceil(data.length / perPage);
+  
 
   const selectPageHandler = (selectedPage) => {
     if (selectedPage >= 1 && selectedPage <= totalPages) {
@@ -63,12 +65,18 @@ export default function Main() {
                     <div className="px-2 text-[16px] font-[500]">
                       <h1>{data.name}</h1>
                     </div>
-                    <div className="flex items-center">
-                      <p className="px-2 text-orange-400 text-lg">
-                        {data.star}
-                      </p>
-                      <p className="px-1 text-gray-500">{data.rating}</p>
-                      <p className="px-1 text-gray-500"> & {data.likes}likes</p>
+                    <div className="flex items-center justify-between px-2">
+                      <div className="flex items-center">
+                        <p className="px-2 text-orange-400 text-lg">
+                          {data.star}
+                        </p>
+                        <p className="px-1 text-gray-500">{data.rating}</p>
+                        <p className="px-1 text-gray-500">
+                          & {data.likes}likes
+                        </p>
+                      </div>
+                      <Love/>
+                      
                     </div>
                     <div className="px-2 flex items-center">
                       <img
