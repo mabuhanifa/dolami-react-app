@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
+import { useAvatar } from "../contextApi/context";
 import { data } from "../data/data";
 import Love from "./Love";
 import Pagination from "./Pagination";
@@ -11,7 +12,13 @@ export default function Main() {
   const pusher = (id) => {
     navigate(`/avatar/${id}`);
   };
-
+  const { dispatch } = useAvatar();
+  const addToCart = (avatar) => {
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: avatar,
+    });
+  };
   const [page, setPage] = useState(1);
   const perPage = 12;
   const lastIndex = page * perPage;
@@ -60,14 +67,20 @@ export default function Main() {
                 .slice(0 * perPage - perPage, page * perPage)
                 .map((data) => (
                   <div key={data.id} className="pb-2">
-                    <div className="p-1 relative" onClick={()=>pusher(data.id)}>
+                    <div className="p-1 relative">
                       <img src={data.img} alt="" className="rounded" />
-                      <button className="px-2 bg-[#4c45f6] text-white rounded-lg absolute top-3 right-3">
+                      <button
+                        className="px-2 bg-[#4c45f6] text-white rounded-lg absolute top-3 right-3"
+                        onClick={() => addToCart(data)}
+                      >
                         <IoCartOutline className="inline text-xl mb-1 mx-1 font-bold" />
                         Add
                       </button>
                     </div>
-                    <div className="px-2 text-[16px] font-[500]" onClick={()=>pusher(data.id)}>
+                    <div
+                      className="px-2 text-[16px] font-[500] cursor-pointer"
+                      onClick={() => pusher(data.id)}
+                    >
                       <h1>{data.name}</h1>
                     </div>
                     <div className="flex items-center justify-between px-2">
