@@ -271,7 +271,7 @@ export const data = [
     price: 9.99,
     pc_only: true,
     desc: "Auto upload service ready, you can use this avatar within 24 hours.",
-    gender: "male",
+    gender: "female",
   },
   {
     id: 22,
