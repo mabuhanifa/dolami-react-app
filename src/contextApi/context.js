@@ -4,7 +4,7 @@ import { data } from "../data/data";
 const Context = createContext();
 
 const initialState = {
-  state: data,
+  data: data,
   cart: [],
 };
 
@@ -12,10 +12,15 @@ const reducer = (state, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
       return { ...state, cart: [...state.cart, action.payload] };
-    case "REMOVE_FROM_CART":
+    case "MALE":
       return {
         ...state,
-        cart: state.cart.filter((item) => item.id !== action.payload),
+        data: state.data.filter((item) => item.gender === "male"),
+      };
+    case "FEMALE":
+      return {
+        ...state,
+        data: state.data.filter((item) => item.gender === "female"),
       };
     default:
       return state;

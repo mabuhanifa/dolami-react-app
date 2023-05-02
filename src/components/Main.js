@@ -2,24 +2,21 @@ import React, { useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import { useAvatar } from "../contextApi/context";
-import { data } from "../data/data";
 import Love from "./Love";
 import Pagination from "./Pagination";
 import Share from "./Share";
 import SideBar from "./SideBar";
 export default function Main() {
   const navigate = useNavigate();
+
   const pusher = (id) => {
     navigate(`/avatar/${id}`);
   };
-  const { dispatch } = useAvatar();
-  const addToCart = (avatar) => {
-    dispatch({
-      type: "ADD_TO_CART",
-      payload: avatar,
-    });
-  };
+  const {
+    state: { data },
+  } = useAvatar();
   const [page, setPage] = useState(1);
+
   const perPage = 12;
   const lastIndex = page * perPage;
   const firstIndex = lastIndex - perPage;
@@ -67,12 +64,12 @@ export default function Main() {
                 .slice(0 * perPage - perPage, page * perPage)
                 .map((data) => (
                   <div key={data.id} className="pb-2">
-                    <div className="p-1 relative">
+                    <div
+                      className="p-1 relative"
+                      onClick={() => pusher(data.id)}
+                    >
                       <img src={data.img} alt="" className="rounded" />
-                      <button
-                        className="px-2 bg-[#4c45f6] text-white rounded-lg absolute top-3 right-3"
-                        onClick={() => addToCart(data)}
-                      >
+                      <button className="px-2 bg-[#4c45f6] text-white rounded-lg absolute top-3 right-3">
                         <IoCartOutline className="inline text-xl mb-1 mx-1 font-bold" />
                         Add
                       </button>

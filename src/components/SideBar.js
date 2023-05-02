@@ -1,15 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function SideBar() {
+  const [avatar, setAvatar] = useState(false);
   return (
     <div className="w-1/4 text-sm">
       <div>
         <h4 className="text-lg font-bold">Category</h4>
-        <div className="px-2">
-          <ul>
-            <li>Ful Avatar</li>
-            <li>Others</li>
-          </ul>
+        <div className="px-2 cursor-pointer" >
+          {avatar ? (
+            <ul>
+              <li className={`underline`}>Full Avatar</li>
+              <li className="mx-2">Human Based</li>
+              <li className="mx-4">Male</li>
+              <li className="mx-4">Female</li>
+              <li className="mx-4">Unisex</li>
+              <li className="mx-4">Others</li>
+            </ul>
+          ) : (
+            <ul>
+              <li onClick={() => setAvatar(!avatar)}>Full Avatar</li>
+              <li>Others</li>
+            </ul>
+          )}
         </div>
       </div>
       <div>
