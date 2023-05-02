@@ -15,12 +15,12 @@ const reducer = (state, action) => {
     case "MALE":
       return {
         ...state,
-        data: state.data.filter((item) => item.gender === "male"),
+        data: data.filter((item) => item.gender === "male"),
       };
     case "FEMALE":
       return {
         ...state,
-        data: state.data.filter((item) => item.gender === "female"),
+        data: data.filter((item) => item.gender === "female"),
       };
     default:
       return state;

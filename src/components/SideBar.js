@@ -1,18 +1,36 @@
 import React, { useState } from "react";
+import { useAvatar } from "../contextApi/context";
 
 export default function SideBar() {
   const [avatar, setAvatar] = useState(false);
+  const {
+    state: { data },
+    dispatch,
+  } = useAvatar();
+  const isMale = data.every((d) => d.gender === "male");
+  const isFemale = data.every((d) => d.gender === "female");
+
   return (
     <div className="w-1/4 text-sm">
       <div>
         <h4 className="text-lg font-bold">Category</h4>
-        <div className="px-2 cursor-pointer" >
+        <div className="px-2 cursor-pointer">
           {avatar ? (
             <ul>
               <li className={`underline`}>Full Avatar</li>
               <li className="mx-2">Human Based</li>
-              <li className="mx-4">Male</li>
-              <li className="mx-4">Female</li>
+              <li
+                className={`mx-4 ${isMale ? "underline " : ""}`}
+                onClick={() => dispatch({ type: "MALE" })}
+              >
+                Male
+              </li>
+              <li
+                className={`mx-4 ${isFemale ? "underline " : ""}`}
+                onClick={() => dispatch({ type: "FEMALE" })}
+              >
+                Female
+              </li>
               <li className="mx-4">Unisex</li>
               <li className="mx-4">Others</li>
             </ul>
