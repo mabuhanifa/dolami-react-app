@@ -15,3 +15,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+#copy {
+  display: none;
+}
+.share:active #copy {
+  display: inline;
+}
