@@ -1,13 +1,17 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Avatar from "./components/Avatar";
 import Main from "./components/Main";
 import Nav from "./components/Nav";
 
 function App() {
-  
   return (
     <div>
       <Nav />
-      <Main />
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/:id" element={<Avatar />} />
+      </Routes>
     </div>
   );
 }
