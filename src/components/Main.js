@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 import { data } from "../data/data";
 import Love from "./Love";
 import Pagination from "./Pagination";
 import Share from "./Share";
 import SideBar from "./SideBar";
 export default function Main() {
+  const navigate = useNavigate();
+  const pusher = (id) => {
+    navigate(`/avatar/${id}`);
+  };
+
   const [page, setPage] = useState(1);
   const perPage = 12;
   const lastIndex = page * perPage;
@@ -54,14 +60,14 @@ export default function Main() {
                 .slice(0 * perPage - perPage, page * perPage)
                 .map((data) => (
                   <div key={data.id} className="pb-2">
-                    <div className="p-1 relative">
+                    <div className="p-1 relative" onClick={()=>pusher(data.id)}>
                       <img src={data.img} alt="" className="rounded" />
                       <button className="px-2 bg-[#4c45f6] text-white rounded-lg absolute top-3 right-3">
                         <IoCartOutline className="inline text-xl mb-1 mx-1 font-bold" />
                         Add
                       </button>
                     </div>
-                    <div className="px-2 text-[16px] font-[500]">
+                    <div className="px-2 text-[16px] font-[500]" onClick={()=>pusher(data.id)}>
                       <h1>{data.name}</h1>
                     </div>
                     <div className="flex items-center justify-between px-2">

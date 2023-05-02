@@ -1,7 +1,10 @@
-import React from 'react'
+import React from "react";
+import { useParams } from "react-router-dom";
+import { data } from "../data/data";
 
 export default function Avatar() {
-  return (
-    <div>Avatar</div>
-  )
+  const { id } = useParams();
+  const avatar = data.find((item) => item.id === Number(id));
+  
+  return <div>{id}</div>;
 }

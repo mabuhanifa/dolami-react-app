@@ -10,7 +10,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/:id" element={<Avatar />} />
+        <Route path="/avatar/:id" element={<Avatar />} />
       </Routes>
     </div>
   );
