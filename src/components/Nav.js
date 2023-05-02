@@ -3,15 +3,18 @@ import { FaUserAlt } from "react-icons/fa";
 import { GoSearch } from "react-icons/go";
 import { IoCartOutline } from "react-icons/io5";
 import { VscBell } from "react-icons/vsc";
+import { Link } from "react-router-dom";
 export default function Nav() {
   return (
     <header className="flex bg-gradient-to-r from-[#371c84] to-[#801f8b] items-center justify-between px-10">
       <nav className="flex items-center">
-        <img
-          src="https://i.ibb.co/2YQx7K1/logo-avatown-manual-1-basi-inverse.png"
-          alt=""
-          className="h-[57px]"
-        />
+        <Link to="/">
+          <img
+            src="https://i.ibb.co/2YQx7K1/logo-avatown-manual-1-basi-inverse.png"
+            alt=""
+            className="h-[57px]"
+          />
+        </Link>
         <span className="text-white underline text-lg ml-10">
           Go to Marketpage
         </span>

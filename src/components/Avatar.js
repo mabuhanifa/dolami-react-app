@@ -24,9 +24,7 @@ export default function Avatar() {
             ipsum dolor sit, amet consectetur adipisicing elit. Quae non vero
             perferendis mollitia fugit error, optio in nihil distinctio quis cum
             placeat aspernatur consequatur. Obcaecati quod nisi voluptatum rem a
-            aliquam asperiores exercitationem? Culpa iusto in nisi asperiores
-            enim quibusdam obcaecati, quasi, magnam at voluptatum temporibus
-            saepe inventore architecto et!
+            aliquam asperiores exercitationem
           </p>
           <p className="py-5">
             <span className="text-gray-500">Category : </span>{" "}
