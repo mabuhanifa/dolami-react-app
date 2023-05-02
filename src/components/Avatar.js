@@ -7,8 +7,14 @@ export default function Avatar() {
   const { id } = useParams();
   const avatar = data.find((item) => item.id === Number(id));
 
-  const state = useAvatar();
-  console.log(state);
+  const { dispatch } = useAvatar();
+
+  const addToCart = (avatar) => {
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: avatar,
+    });
+  };
 
   return (
     <div className="px-20 py-5">
@@ -54,7 +60,10 @@ export default function Avatar() {
             </div>
           </div>
           <div>
-            <button className="block bg-indigo-100 text-indigo-700 font-[500] py-3 rounded-full my-5 w-full">
+            <button
+              className="block bg-indigo-100 text-indigo-700 font-[500] py-3 rounded-full my-5 w-full"
+              onClick={() => addToCart(avatar)}
+            >
               Add To Cart
             </button>
             <button className="block bg-indigo-100 text-indigo-700 font-[500] py-3 rounded-full my-5 w-full">
