@@ -24,10 +24,12 @@ const reducer = (state, action) => {
 
 const ContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  return <Context.Provider value={{ rest: "hs" }}>{children}</Context.Provider>;
+  return (
+    <Context.Provider value={{ state, dispatch }}>{children}</Context.Provider>
+  );
 };
 
-const useAvatar = () => {
+export const useAvatar = () => {
   return useContext(Context);
 };
 

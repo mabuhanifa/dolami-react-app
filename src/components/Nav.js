@@ -4,7 +4,11 @@ import { GoSearch } from "react-icons/go";
 import { IoCartOutline } from "react-icons/io5";
 import { VscBell } from "react-icons/vsc";
 import { Link } from "react-router-dom";
+import { useAvatar } from "../contextApi/context";
 export default function Nav() {
+  const {
+    state: { cart },
+  } = useAvatar();
   return (
     <header className="flex bg-gradient-to-r from-[#371c84] to-[#801f8b] items-center justify-between px-10">
       <nav className="flex items-center">
@@ -39,7 +43,7 @@ export default function Nav() {
         <span className="bg-gray-800 mx-5 p-3 rounded-lg relative">
           <IoCartOutline className="text-xl" />
           <span className="absolute bg-red bg-red-600 text-white text-xs px-1.5 rounded-full top-[-5px] right-[-5px]">
-            1
+            {cart && cart.length}
           </span>
         </span>
         <span className="bg-gray-800 mx-5 p-3 rounded-lg">

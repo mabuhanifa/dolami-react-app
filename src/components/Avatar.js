@@ -1,10 +1,14 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+import { useAvatar } from "../contextApi/context";
 import { data } from "../data/data";
 
 export default function Avatar() {
   const { id } = useParams();
   const avatar = data.find((item) => item.id === Number(id));
+
+  const state = useAvatar();
+  console.log(state);
 
   return (
     <div className="px-20 py-5">
@@ -44,7 +48,9 @@ export default function Avatar() {
             <div>
               <h1 className="text-xl font-bold">${avatar.price}</h1>
               <p className="text-xl text-orange-700">{avatar.star}</p>
-              <p>{avatar.rating} | {avatar.likes} Likes</p>
+              <p>
+                {avatar.rating} | {avatar.likes} Likes
+              </p>
             </div>
           </div>
           <div>
